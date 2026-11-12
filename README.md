@@ -2,6 +2,10 @@
 
 A native macOS menu bar app showing local Codex desktop activity through the built-in Caps Lock LED. Installed at `/Applications/Agent Indicator.app`.
 
+## Download
+
+Download the built app from [GitHub Releases](https://github.com/MinchuanC/Agent-Indicator/releases/latest). Unzip it and drag **Agent Indicator.app** into Applications. The binary requires **Apple Silicon and macOS 27 or later**; it is ad-hoc signed and not Apple-notarized. See the release notes for first-launch instructions, then grant Input Monitoring as described below. Other Macs and keyboards remain unverified.
+
 ## Use
 
 Click Agent Indicator’s menu bar symbol for a standard macOS dropdown. The **Chats** submenu lists chats in urgency order; each chat provides **Open Codex**, plus **Mark read** for ready responses. Opening the menu does not acknowledge responses. Pause, Settings, and Quit are available directly in the dropdown. Launching the app does not automatically open a panel; reopening it opens Settings.
@@ -40,7 +44,7 @@ Requires the local Apple Swift compiler and macOS SDK. The current packaged buil
 open "/Applications/Agent Indicator.app"
 ```
 
-Quit the installed app before rebuilding. The build script compiles with `swiftc`, installs to the existing main Applications location (or your personal Applications folder for a fresh install), and ad-hoc signs the bundle. Install the final binary before granting permissions: a rebuild can invalidate a prior grant. No Apple Developer account, notarization, or public distribution is configured. The Swift package manifest is also included; the direct build avoids this machine's broken Swift package runner.
+Quit the installed app before rebuilding. The build script compiles with `swiftc`, installs to the existing main Applications location (or your personal Applications folder for a fresh install), and ad-hoc signs the bundle. Install the final binary before granting permissions: a rebuild can invalidate a prior grant. The downloadable build is ad-hoc signed; no Apple Developer account or notarization is configured. The Swift package manifest is also included; the direct build avoids this machine's broken Swift package runner.
 
 One focused reducer smoke check:
 
